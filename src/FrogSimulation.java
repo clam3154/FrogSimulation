@@ -10,7 +10,7 @@ public class FrogSimulation
     }
     private int hopDistance()
     {
-        int random = -4+(int)(Math.random()*20);
+        int random = -4+(int)(Math.random()*19);
         System.out.print(random + " ");
         return random;
     }
