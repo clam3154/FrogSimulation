@@ -11,6 +11,7 @@ public class FrogSimulation
     private int hopDistance()
     {
         int random = -4+(int)(Math.random()*20);
+        System.out.print(random + " ");
         return random;
     }
     public boolean simulate()
@@ -21,13 +22,16 @@ public class FrogSimulation
             position += hopDistance();
             if (position >= goalDistance)
             {
+                System.out.print("Success Final Distance : " + position + "\n");
                 return true;
             }
             else if (position < 0)
             {
+                System.out.print("Failed Reached Negative Distance : " + position + "\n");
                 return false;
             }
         }
+        System.out.print("Failed Final Distance : " + position + "\n");
         return false;
     }
     public double runSimulations(int num)
@@ -35,6 +39,7 @@ public class FrogSimulation
         int countSuccess = 0;
         for (int count = 0; count < num; count++)
         {
+            System.out.print("Goal : " + goalDistance + " Hops: ");
             if(simulate())
             {
                 countSuccess++;
